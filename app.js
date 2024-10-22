@@ -67,7 +67,7 @@ $(document).ready(function() {
     axios.get(api)
     .then(response => {
 
-      if( Array.isArray(response.data) && response.data.langth > 0 ) {
+      if( Array.isArray(response.data) && response.data.length > 0 ) {
         
         tbody.empty();
 
