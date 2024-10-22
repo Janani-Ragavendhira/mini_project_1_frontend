@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Employee Management App - Mini Project 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-3 mt-3 display-2">Employee Management App</span>
+      </div>
+    </nav>
+
+    <div class="my-4 container-fluid">
+
+      <div id="alerts"></div>
+      
+      <section id="employees_section" class="section d-none">
+        <button class="btn-primary btn mb-4 view_switcher" data-view="form_section">Create Employee</button>
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Employee First Name</th>
+              <th scope="col">Employee Last Name</th>
+              <th scope="col">Employee Email</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <section id="form_section" class="section d-none">
+        <button class="btn-primary btn mb-4 view_switcher" data-view="employees_section">Show Employees</button>
+        <button class="view-btn btn btn-primary mb-4">View Employee</button>
+
+        <div class="row">
+          <div class="col-4 offset-4">
+            <p class="text-center mb-4">Employee</p>
+            <form id="form" action="#">
+              <div class="mb-3">
+                <label for="first_name" class="form-label">First Name</label>
+                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Enter First Name" />
+              </div>
+              <div class="mb-3">
+                <label for="last_name" class="form-label">Last Name</label>
+                <input type="last_name" class="form-control" name="last_name" id="last_name" placeholder="Enter Last Name" />
+              </div>
+              <div class="mb-4">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email" />
+              </div>
+              <div class="mb-3">
+                <button id="save" class="btn-primary btn">Save</button>
+                <button class="btn-default btn view_switcher" data-view="employees_section">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section id="profile_section" class="section d-none">
+        <button class="btn-primary btn mb-4 view_switcher" data-view="employees_section">Show Employees</button>
+        <button class="btn-primary btn mb-4 view_switcher" data-view="form_section">Create Employee</button>
+        <button class="btn-primary btn mb-4 update-btn">Edit Employee</button>
+
+        <div class="row">
+          <div class="col-4 offset-4">
+            <p class="text-center mb-4 fs-4">Employee Details</p>
+
+            <div class="mb-3">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <p class="text-body-secondary fs-6 mb-0">First Name</p>
+                  <p class="fs-4 mb-0" id="first_name"></p>
+                </li>
+                <li class="list-group-item">
+                  <p class="text-body-secondary fs-6 mb-0">Last Name</p>
+                  <p class="fs-4 mb-0" id="last_name"></p>
+                </li>
+                <li class="list-group-item">
+                  <p class="text-body-secondary fs-6 mb-0">Email</p>
+                  <p class="fs-4 mb-0" id="email"></p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" crossorigin="anonymous"></script>
+    <script src="./app.js"></script>
+    <style type="text/css">
+      label.error {
+        color: red;
+        font-size: 13px;
+      }
+    </style>
+  </body>
+</html>
