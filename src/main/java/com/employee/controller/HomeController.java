@@ -21,12 +21,6 @@ public class HomeController {
         this.apiService = apiService;
     }
 
-    @GetMapping("/")
-    public String home(Model model) {
-        model.addAttribute("message", "Welcome to Thymeleaf with Spring Boot!");
-        return "home";
-    }
-
     @GetMapping("/createEmployee")
     public String createEmployee(Model model) {
         model.addAttribute("showStatus", false);
@@ -73,7 +67,7 @@ public class HomeController {
                 .thenReturn("deleteEmployeeInfo");
     }
 
-    @GetMapping("/showEmployees")
+    @GetMapping(value={"/", "/showEmployees"})
     public Mono<String> showEmployees(Model model) {
 
         model.addAttribute("employees", null);
